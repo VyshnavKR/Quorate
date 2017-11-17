@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".PostDetailActivity"
+
+
+    >
+
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:fillViewport="false"
+        android:layout_margin="5dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
+
+
+        <include
+            android:id="@+id/post_text_layout"
+            layout="@layout/include_post_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/comment_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="1.0"
+        android:layout_below="@+id/scrollView"
+        android:paddingLeft="10dp"
+        android:paddingRight="7dp">
+
+        <EditText
+            android:id="@+id/field_comment_text"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:hint="Write answer..."
+            android:fontFamily="sans-serif-light"
+
+            />
+
+
+        <ImageView
+            android:id="@+id/button_post_comment"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_send_black_24dp"
+            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            />
+
+    </LinearLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_comment"
+            android:layout_below="@+id/comment_form"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            />
+
+
+</RelativeLayout>
